@@ -1,0 +1,21 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "My New Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Aminur Rahman",
+    "theme_documentation_url": "https://examples.com",
+    "theme_support_email": "dev.aminur@gmail.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#000000"
+      }
+    ]
+  }
+]

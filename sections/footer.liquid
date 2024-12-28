@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="container">
+    {% if section.settings.show_newsletter %}
+      {% include 'newsletter-form' %}
+    {% endif %}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter signup",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

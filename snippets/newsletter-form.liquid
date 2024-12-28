@@ -1,0 +1,7 @@
+<div class="newsletter-form">
+  {% form 'customer' %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <input type="email" name="contact[email]" placeholder="Email address">
+    <button type="submit">Subscribe</button>
+  {% endform %}
+</div>
