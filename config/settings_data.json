@@ -13,7 +13,8 @@
       "header": {
         "type": "header",
         "settings": {
-          "menu": "main-menu"
+          "menu": "main-menu",
+          "enable_search_bar": false
         }
       },
       "footer": {
@@ -23,9 +24,36 @@
         }
       },
       "test": {
-        "type": "slider"
+        "type": "slider",
+        "blocks": {
+          "slide_rgwPbU": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/bg.jpg",
+              "alt_text": "Slide description 2",
+              "title": "Slide title 2",
+              "description": "This is a description for the slide."
+            }
+          },
+          "slide_F9C4FH": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify://shop_images/bg.jpg",
+              "alt_text": "Slide description",
+              "title": "Slide title",
+              "description": "This is a description for the slide."
+            }
+          }
+        },
+        "block_order": [
+          "slide_rgwPbU",
+          "slide_F9C4FH"
+        ],
+        "settings": {}
       }
     },
-    "content_for_index": ["test"]
+    "content_for_index": [
+      "test"
+    ]
   }
 }
