@@ -21,19 +21,14 @@
         "settings": {
           "show_newsletter": true
         }
-      }
-    },
-    "content_for_index": [
-      {
-        "sections": {
-          "header": {
-            "type": "header",
-            "settings": {
-              "menu": "main-menu"
-            }
-          }
+      },
+      "test": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu"
         }
       }
-    ]
+    },
+    "content_for_index": ["test"]
   }
 }
