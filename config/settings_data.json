@@ -23,6 +23,17 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+      {
+        "sections": {
+          "header": {
+            "type": "header",
+            "settings": {
+              "menu": "main-menu"
+            }
+          }
+        }
+      }
+    ]
   }
 }
