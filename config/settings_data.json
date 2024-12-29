@@ -20,32 +20,33 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "show_newsletter": true
+          "show_newsletter": false
         }
       },
       "test": {
         "type": "slider",
         "blocks": {
+          "slide_ggaT8x": {
+            "type": "slide",
+            "settings": {
+              "slide_img": "shopify://shop_images/bg.jpg"
+            }
+          },
           "slide_rgwPbU": {
             "type": "slide",
             "settings": {
-              "image": "shopify://shop_images/bg.jpg",
-              "alt_text": "Slide description 2",
-              "title": "Slide title 2",
-              "description": "This is a description for the slide."
+              "slide_img": "shopify://shop_images/bg.jpg"
             }
           },
           "slide_F9C4FH": {
             "type": "slide",
             "settings": {
-              "image": "shopify://shop_images/bg.jpg",
-              "alt_text": "Slide description",
-              "title": "Slide title",
-              "description": "This is a description for the slide."
+              "slide_img": "shopify://shop_images/bg.jpg"
             }
           }
         },
         "block_order": [
+          "slide_ggaT8x",
           "slide_rgwPbU",
           "slide_F9C4FH"
         ],
