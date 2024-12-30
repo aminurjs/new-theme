@@ -1,4 +1,9 @@
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+<div
+  id="carouselExampleCaptions"
+  class="carousel slide"
+  data-bs-ride="carousel"
+  data-bs-interval="{{ section.settings.auto_slide }}"
+>
   <div class="carousel-indicators">
     {% for item in section.blocks %}
       <button
@@ -27,7 +32,7 @@
             alt="Slide {{ forloop.index }}"
           >
         {% endif %}
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption d-none d-md-block mb-3">
           <h5>{{ item.settings.slide_heading }}</h5>
           <div>{{ item.settings.slide_description }}</div>
           {% if item.settings.btn_title != blank %}
@@ -54,7 +59,14 @@
 {% schema %}
 {
   "name": "Slider",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "auto_slide",
+      "label": "Enable Auto Slide",
+      "default": false
+    }
+  ],
   "blocks": [
     {
       "type": "slide",
