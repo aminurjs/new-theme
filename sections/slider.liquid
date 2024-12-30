@@ -25,9 +25,8 @@
     {% for item in section.blocks %}
       <div
         class="carousel-item {% if forloop.index == 1 %} active {% endif %}"
-        {% if section.settings.auto_slide %}
-          data-bs-interval="{{section.settings.speed}}"
-        {% endif %}
+
+        data-bs-interval="{% if section.settings.auto_slide %}0 {% else %}{{section.settings.speed}}{% endif %}"
       >
         {% if item.settings.slide_img %}
           <img
