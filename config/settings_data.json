@@ -23,14 +23,22 @@
           "footer_logo_NpFRGn": {
             "type": "footer_logo",
             "settings": {
-              "footer_logo": "shopify://shop_images/logo-1.svg",
+              "logo": "shopify://shop_images/flowers-in-yellow-watering-can_925x_4a867e30-c907-4a51-9e03-5ff7616c8786.jpg",
               "url": "/",
               "info": "<p>This is footer ingo...</p>"
+            }
+          },
+          "footer_menu_jw7hm4": {
+            "type": "footer_menu",
+            "settings": {
+              "menu_title": "About",
+              "menu": ""
             }
           }
         },
         "block_order": [
-          "footer_logo_NpFRGn"
+          "footer_logo_NpFRGn",
+          "footer_menu_jw7hm4"
         ],
         "settings": {}
       },
