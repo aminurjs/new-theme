@@ -13,8 +13,8 @@
     </h2>
   </div>
   <div class="row">
-    {% for product in collection.products %}
-      <div class="col-md-4">
+    {% for product in collection.products limit: section.settings.product_limit %}
+      <div class="col-12 col-sm-6 col-md-{{section.settings.row_limit}} mb-4">
         <div class="card p-2">
           <img
             src="{{ product.featured_image | image_url: width:500 }}"
@@ -34,8 +34,11 @@
       </div>
     {% endfor %}
   </div>
+  {% if collection.all_products_count > section.settings.product_limit %}
+    <div class="d-flex justify-content-center"><a href="{{ collection.url }}" class="btn btn-primary">View all</a></div>
+  {% endif %}
 </div>
-<div class="container"></div>
+
 {% schema %}
 {
   "name": "Featured collection",
@@ -49,6 +52,30 @@
       "type": "collection",
       "id": "collection",
       "label": "Collection"
+    },
+    {
+      "type": "header",
+      "content": "Customize section"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "pcs",
+      "label": "Products limit",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "row_limit",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "pcs",
+      "label": "Products in row",
+      "default": 3
     }
   ],
   "presets": [
