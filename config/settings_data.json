@@ -68,10 +68,17 @@
           "show_navigation": false,
           "speed": 4000
         }
+      },
+      "featured_collection_xBfQUj": {
+        "type": "featured-collection",
+        "settings": {
+          "collection": "featured-products"
+        }
       }
     },
     "content_for_index": [
-      "test"
+      "test",
+      "featured_collection_xBfQUj"
     ]
   }
 }
