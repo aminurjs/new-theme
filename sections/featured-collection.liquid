@@ -12,9 +12,9 @@
       {% endif %}
     </h2>
   </div>
-  <div class="row">
+  <div style="display: grid;grid-template-columns: repeat({{ section.settings.row_limit }}, minmax(0, 1fr));gap: 20px;">
     {% for product in collection.products limit: section.settings.product_limit %}
-      <div class="col-12 col-sm-6 col-md-{{section.settings.row_limit}} mb-4">
+      <div>
         <div class="card p-2">
           <img
             src="{{ product.featured_image | image_url: width:500 }}"
