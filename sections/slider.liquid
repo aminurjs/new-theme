@@ -4,24 +4,31 @@
   data-bs-ride="carousel"
   data-bs-interval="{{ section.settings.auto_slide }}"
 >
-  <div class="carousel-indicators">
-    {% for item in section.blocks %}
-      <button
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide-to="{{ forloop.index0 }}"
-        {% if forloop.index == 1 %}
-          class="active"
-          aria-current="true"
-        {% endif %}
+  {% if section.settings.show_navigation %}
+    <div class="carousel-indicators">
+      {% for item in section.blocks %}
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="{{ forloop.index0 }}"
+          {% if forloop.index == 1 %}
+            class="active"
+            aria-current="true"
+          {% endif %}
 
-        aria-label="Slide {{ forloop.index }}"
-      ></button>
-    {% endfor %}
-  </div>
+          aria-label="Slide {{ forloop.index }}"
+        ></button>
+      {% endfor %}
+    </div>
+  {% endif %}
   <div class="carousel-inner">
     {% for item in section.blocks %}
-      <div class="carousel-item {% if forloop.index == 1 %} active {% endif %}">
+      <div
+        class="carousel-item {% if forloop.index == 1 %} active {% endif %}"
+        {% if section.settings.auto_slide %}
+          data-bs-interval="{{section.settings.speed}}"
+        {% endif %}
+      >
         {% if item.settings.slide_img %}
           <img
             src="{{ item.settings.slide_img | image_url: width:1920 }}"
@@ -32,7 +39,7 @@
             alt="Slide {{ forloop.index }}"
           >
         {% endif %}
-        <div class="carousel-caption d-none d-md-block mb-3">
+        <div class="carousel-caption d-none d-md-block mb-4">
           <h5>{{ item.settings.slide_heading }}</h5>
           <div>{{ item.settings.slide_description }}</div>
           {% if item.settings.btn_title != blank %}
@@ -44,7 +51,7 @@
       </div>
     {% endfor %}
   </div>
-  {% if section.blocks.size > 0 %}
+  {% if section.blocks.size > 0 and section.settings.show_prev_next %}
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -65,6 +72,28 @@
       "id": "auto_slide",
       "label": "Enable Auto Slide",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_prev_next",
+      "label": "Show prev & next button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_navigation",
+      "label": "Show Navigation",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 500,
+      "max": 20000,
+      "step": 100,
+      "unit": "ms",
+      "label": "Speed",
+      "default": 3000
     }
   ],
   "blocks": [
