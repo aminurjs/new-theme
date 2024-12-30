@@ -1,20 +1,56 @@
 <footer class="site-footer">
-  <div class="container">
-    {% if section.settings.show_newsletter %}
-      {% render 'newsletter-form' %}
-    {% endif %}
-  </div>
+  <div class="container"></div>
 </footer>
 
 {% schema %}
 {
   "name": "Footer",
-  "settings": [
+  "settings": [],
+  "blocks": [
     {
-      "type": "checkbox",
-      "id": "show_newsletter",
-      "label": "Show newsletter signup",
-      "default": true
+      "type": "footer_menu",
+      "name": "Footer Menu",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu title",
+          "default": "Menu title"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Footer menu"
+        }
+      ]
+    },
+    {
+      "type": "footer_logo",
+      "name": "Footer Logo",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "footer_logo",
+          "label": "Footer Logo"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Logo url"
+        },
+        {
+          "type": "richtext",
+          "id": "info",
+          "label": "Info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
     }
   ]
 }

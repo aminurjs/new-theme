@@ -35,7 +35,9 @@
     {% endfor %}
   </div>
   {% if collection.all_products_count > section.settings.product_limit %}
-    <div class="d-flex justify-content-center"><a href="{{ collection.url }}" class="btn btn-primary">View all</a></div>
+    <div class="d-flex justify-content-center mt-5">
+      <a href="{{ collection.url }}" class="btn btn-primary">View all</a>
+    </div>
   {% endif %}
 </div>
 
