@@ -19,9 +19,20 @@
       },
       "footer": {
         "type": "footer",
-        "settings": {
-          "show_newsletter": false
-        }
+        "blocks": {
+          "footer_logo_NpFRGn": {
+            "type": "footer_logo",
+            "settings": {
+              "footer_logo": "shopify://shop_images/logo-1.svg",
+              "url": "/",
+              "info": "<p>This is footer ingo...</p>"
+            }
+          }
+        },
+        "block_order": [
+          "footer_logo_NpFRGn"
+        ],
+        "settings": {}
       },
       "test": {
         "type": "slider",
@@ -72,7 +83,10 @@
       "featured_collection_xBfQUj": {
         "type": "featured-collection",
         "settings": {
-          "collection": "featured-products"
+          "title": "",
+          "collection": "featured-products",
+          "product_limit": 6,
+          "row_limit": 3
         }
       }
     },
