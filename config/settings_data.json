@@ -32,13 +32,29 @@
             "type": "footer_menu",
             "settings": {
               "menu_title": "About",
-              "menu": ""
+              "menu": "about-menu"
+            }
+          },
+          "footer_menu_6WGRkq": {
+            "type": "footer_menu",
+            "settings": {
+              "menu_title": "Contact",
+              "menu": "contact"
+            }
+          },
+          "footer_menu_cpCJJY": {
+            "type": "footer_menu",
+            "settings": {
+              "menu_title": "Connect",
+              "menu": "footer"
             }
           }
         },
         "block_order": [
           "footer_logo_NpFRGn",
-          "footer_menu_jw7hm4"
+          "footer_menu_jw7hm4",
+          "footer_menu_6WGRkq",
+          "footer_menu_cpCJJY"
         ],
         "settings": {}
       },
