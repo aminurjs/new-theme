@@ -1,5 +1,40 @@
 <footer class="site-footer">
-  <div class="container"></div>
+  <div class="container">
+    <div class="row">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'footer_menu' %}
+            <div class="col-md-3">
+              <h4>{{ block.settings.menu_title }}</h4>
+              <div class="footer-links">
+                <ul>
+                  {% for link in block.settings.menu %}
+                    <li>
+                      <a href="{{ link.url }}" class="btn btn-link">{{ link.title | escape }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% when 'footer_logo' %}
+            <div class="col-md-3">
+              <a href="{{ block.settings.url }}" class="footer-logo">
+                <img
+                  src="{{ block.settings.logo| image_url: width: 200, height: 200 }}"
+                  alt="logo"
+                  width="auto"
+                  height="auto"
+                  loading="eager"
+                >
+              </a>
+              <div class="info">
+                {{ block.settings.info }}
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
 </footer>
 
 {% schema %}
@@ -32,8 +67,8 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "footer_logo",
-          "label": "Footer Logo"
+          "id": "logo",
+          "label": "Logo"
         },
         {
           "type": "url",
