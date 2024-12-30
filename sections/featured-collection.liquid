@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="section-heading">
+    <h2>Featured collection</h2>
+  </div>
+  <div class="row">
+    {% for product in section.settings.collection.products %}
+      <div class="col-md-4">
+        <div class="product-card">
+          <h2>{{ product.title }}</h2>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="container"></div>
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection"
+    }
+  ]
+}
+{% endschema %}
