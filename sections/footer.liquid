@@ -7,8 +7,8 @@
             <div class="col-md-3">
               <h4>{{ block.settings.menu_title }}</h4>
               <div class="footer-links">
-                <ul>
-                  {% for link in block.settings.menu %}
+                <ul style="  list-style-type: none;margin: 0;padding: 0;">
+                  {% for link in block.settings.menu.links %}
                     <li>
                       <a href="{{ link.url }}" class="btn btn-link">{{ link.title | escape }}</a>
                     </li>
